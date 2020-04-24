@@ -1,15 +1,16 @@
-package ley.anvil.exposer.node;
+package ley.anvil.exposer.cap;
 
 import com.raoulvdberge.refinedstorage.api.network.INetwork;
-import com.raoulvdberge.refinedstorage.api.storage.IStorageCache;
 import com.raoulvdberge.refinedstorage.api.storage.IStorageCacheListener;
 import com.raoulvdberge.refinedstorage.api.util.Action;
 import com.raoulvdberge.refinedstorage.api.util.IComparer;
 import com.raoulvdberge.refinedstorage.util.StackUtils;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
+import org.apache.commons.lang3.tuple.Pair;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 
 public class ItemHandlerExposer implements IItemHandler, IStorageCacheListener<ItemStack> {
 
@@ -74,5 +75,12 @@ public class ItemHandlerExposer implements IItemHandler, IStorageCacheListener<I
     public void onChanged(@Nonnull ItemStack stack, int size) {
         invalidate();
     }
+
+
+    public void onChangedBulk(@Nonnull List<Pair<ItemStack, Integer>> stacks) {
+        invalidate();
+    }
+
+
 
 }

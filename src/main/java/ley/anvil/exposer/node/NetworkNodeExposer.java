@@ -2,6 +2,7 @@ package ley.anvil.exposer.node;
 
 import com.raoulvdberge.refinedstorage.api.network.INetwork;
 import com.raoulvdberge.refinedstorage.apiimpl.network.node.NetworkNode;
+import ley.anvil.exposer.cap.ItemHandlerExposer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandler;
